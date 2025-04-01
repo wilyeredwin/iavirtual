@@ -1,0 +1,45 @@
+inventario = []  # Aquí se guardan los productos.
+
+while True:  # Este ciclo se repite hasta que uno decida salir.
+   
+    # Menú de opciones
+    print("1. Agregar producto")  
+    print("2. Buscar producto")
+    print("3. Mostrar productos")
+    print("4. Salir")
+    opcion = input("Elige una opción: ")  # Pedimos al usuario que elija.
+
+    if opcion == "1":  # Agregar producto
+        nombre = input("Nombre: ")  # Nombre del producto
+        precio = float(input("Precio: "))  # Precio en número decimal
+        cantidad = int(input("Cantidad: "))  # Cantidad en número entero
+       
+        inventario.append({"nombre": nombre, "precio": precio, "cantidad": cantidad})  # Se guarda el producto
+        print("Producto agregado")
+
+    elif opcion == "2":  # Buscar producto
+        nombre_buscar = input("Nombre a buscar: ")  # Nombre a buscar
+        i = 0  # Contador
+
+        while i < len(inventario):  # Recorremos la lista
+            if inventario[i]["nombre"] == nombre_buscar:  # Si lo encontramos
+                print("Nombre:", inventario[i]["nombre"])
+                print("Precio:", inventario[i]["precio"])
+                print("Cantidad:", inventario[i]["cantidad"])
+                break  # Salimos porque ya lo encontramos
+            i += 1  # Seguimos buscando
+
+        if i == len(inventario):  # Si no se encontró
+            print("No encontrado")
+
+    elif opcion == "3":  # Mostrar todos los productos
+        i = 0
+        while i < len(inventario):
+            print(inventario[i])
+            i += 1
+
+    elif opcion == "4":  # Salir del programa
+        break
+
+    else:  # Si escribieron algo mal
+        print("Opción inválida")
