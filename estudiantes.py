@@ -1,3 +1,4 @@
+# Ejercicio final de la instroduccion a python  grupo 12 [2025-04-01 ] WE-FERIA
 import os
 os.system('cls' if os.name == 'nt' else 'clear')
 Estudiantes=[]
