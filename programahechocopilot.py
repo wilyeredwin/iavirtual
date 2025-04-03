@@ -29,15 +29,17 @@ def mostrar_estudiantes_con_promedio(estudiantes, valor):
 
 def buscar_estudiante(estudiantes, nombre):
     """
-    Busca un estudiante por nombre.
+    Busca un estudiante por nombre o parte del nombre.
     """
     print(f"Resultados de búsqueda para '{nombre}':")
+    encontrados = False
     for estudiante in estudiantes:
-        if estudiante["nombre"].lower() == nombre.lower():
+        if nombre.lower() in estudiante["nombre"].lower():
             promedio = calcular_promedio(estudiante["calificaciones"])
             print(f"Nombre: {estudiante['nombre']}, Edad: {estudiante['edad']}, Promedio: {promedio:.2f}")
-            return
-    print("Estudiante no encontrado.")
+            encontrados = True
+    if not encontrados:
+        print("No se encontraron estudiantes con ese nombre o parte del nombre.")
 
 def main():
     estudiantes = []
