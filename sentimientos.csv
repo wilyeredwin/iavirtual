@@ -1,0 +1,19 @@
+texto,sentimiento
+"¡Me encanta este nuevo producto!",positivo
+"Este servicio es horrible.",negativo
+"No estoy seguro de cómo me siento al respecto.",neutral
+"¡Qué día tan maravilloso!",positivo
+"Estoy muy decepcionado.",negativo
+"Es una situación complicada.",neutral
+"¡Absolutamente increíble!",positivo
+"No puedo creer lo malo que es.",negativo
+"Es lo que es.",neutral
+"I love this new product!",positive
+"This service is awful.",negative
+"I'm not sure how I feel about it.",neutral
+"What a wonderful day!",positive
+"I'm very disappointed.",negative
+"It's a complicated situation.",neutral
+"Absolutely amazing!",positive
+"I can't believe how bad it is.",negative
+"It is what it is.",neutral
