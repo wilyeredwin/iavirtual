@@ -1,3 +1,22 @@
+"""
+Que hacer antes...
+Ve a Reddit Apps. https://www.reddit.com/prefs/apps
+Haz clic en "Create App" o "Create Another App".
+Completa los campos:
+Name: Un nombre para tu aplicación (por ejemplo, "Análisis de Sentimientos").
+App type: Selecciona script.
+Redirect URI: Usa http://localhost (o cualquier URL válida).
+Description: Opcional.
+Guarda la aplicación y copia:
+Client ID: Es el código que aparece debajo del nombre de tu aplicación.
+Client Secret: Es el código secreto que aparece al lado de tu aplicación.
+"""
+""" 
+praw-Biblioteca Python que permite interactuar con la
+    API de Reddit de manera sencilla. 
+    Es como un puente entre tu programa y Reddit, 
+    lo que te permite automatizar tareas o extraer datos de esta plataforma."""
+
 import praw
 import pandas as pd
 from nltk.sentiment import SentimentIntensityAnalyzer
