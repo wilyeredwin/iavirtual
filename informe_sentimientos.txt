@@ -1,0 +1,32 @@
+Resumen de Sentimientos:
+Sentimiento
+Negativo    289
+Neutral     255
+Positivo     45
+
+Estadísticas descriptivas de los puntajes de sentimiento:
+count    589.000000
+mean      -0.217167
+std        0.353672
+min       -0.994400
+25%       -0.526700
+50%        0.000000
+75%        0.000000
+max        0.994300
+
+Comentario más positivo:
+Comentario: Petro will accept millions of migrants pour into Colombia from Venezuela but not his own citizens because they were sent in a “military” plane?  Wow! What a brilliant, selfless leader of the Colombian people! Putting national interest above delusional ideologies to usher in peace and prosperity for his citizens.  I salute the people who support this messiah in his noble cause.
+
+The total peace and dismantling of guerrilla groups, the achievement of self-sufficiency in energy needs, the creation of jobs and strong middle class, the elimination of crime and corruption, the Buddha-like sermons on twitter, the achievements of Petro just go on and on.
+
+Let’s hope Petro rules for another 20 years and we will overtake Cuba and Venezuela to become a beacon of success in Latin American. Viva la revolución!
+Puntaje Sentimiento: 0.9943
+
+Comentario más negativo:
+Comentario: La primera vez es un misdemeanor si te pasas por un lugar no oficial. Solo es criminal cuando te han deportado y vuelves a entrar sin permiso. 
+
+Pero quedarse sin status después de haber entrado legal ni siquiera es misdemeanor 
+.
+
+“Illegal Entry”/8 U.S.C. § 1325 makes it a crime to unlawfully enter the United States. It applies to people who do not enter with proper inspection at a port of entry, such as those who enter between ports of entry, avoid examination or inspection, or who make false statements while entering or attempting to enter. A first offense is a misdemeanor punishable by a fine, up to six months in prison, or both.
+“Illegal Re-Entry”/8 U.S.C. § 1326 makes it a crime to unlawfully reenter, attempt to unlawfully reenter, or to be found in the United States after having been deported, ordered removed, or denied admission. This crime is punishable as a felony with a maximum sentence of two years in prison. Higher penalties apply if the person was previously removed after having been convicted of certain crimes: up to 10 years for a single felony conviction (other than an aggravated felony conviction) or three misdemeanor convictions involving drugs or crimes against a person, and up to 20 years for an aggravated felony conviction.

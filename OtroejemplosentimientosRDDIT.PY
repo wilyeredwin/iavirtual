@@ -15,13 +15,18 @@ Client Secret: Es el código secreto que aparece al lado de tu aplicación.
 praw-Biblioteca Python que permite interactuar con la
     API de Reddit de manera sencilla. 
     Es como un puente entre tu programa y Reddit, 
-    lo que te permite automatizar tareas o extraer datos de esta plataforma."""
+    lo que te permite automatizar tareas o extraer datos de esta plataforma.
+
+matplotlib.pyplot usado para montar informe de barras
+    """
 
 import praw
 import pandas as pd
 from nltk.sentiment import SentimentIntensityAnalyzer
 import nltk
 import os
+import matplotlib.pyplot as plt
+import textwrap
 
 # Descargar los datos necesarios para VADER
 nltk.download('vader_lexicon')
@@ -89,7 +94,63 @@ if post_encontrado:
     print(df_comentarios["Sentimiento"].value_counts())
     print(f"Análisis de comentarios completado. Resultados guardados en '{archivo_comentarios}'.")
 
-    # Abrir el archivo CSV en Excel
-    os.startfile(archivo_comentarios)
+   
+    # -------------------------------------------------------
+    # Montaje de informe sobre información
+    df = pd.read_csv(archivo_comentarios, encoding="utf-8")
+
+    # Verificar las primeras filas del archivo
+    print("Primeras filas del archivo:")
+    print(df.head())
+
+    # Resumen de sentimientos
+    print("\nResumen de sentimientos:")
+    conteo_sentimientos = df["Sentimiento"].value_counts()
+    print(conteo_sentimientos)
+
+    # Estadísticas descriptivas de los puntajes de sentimiento
+    print("\nEstadísticas descriptivas de los puntajes de sentimiento:")
+    print(df["Puntaje Sentimiento"].describe())
+
+    # Gráfico de barras para la distribución de sentimientos
+    plt.figure(figsize=(8, 6))
+    # Se crea el grafico con la serie conteo_sentimientos
+    conteo_sentimientos.plot(kind="bar", color=["green", "red", "blue"])
+    titulo = "Distribución de Sentimientos en los Comentarios ("+post_encontrado.title+")"
+    titulo_envuelto = "\n".join(textwrap.wrap(titulo, width=60))  # Ajusta el ancho con `width`
+    plt.title(titulo_envuelto, loc="center")
+    plt.xlabel("Sentimiento")
+    plt.ylabel("Cantidad de Comentarios")
+    plt.xticks(rotation=0)
+    plt.tight_layout()
+    plt.savefig("grafico_sentimientos.png")  # Guardar el gráfico como imagen
+    plt.show()
+
+    # Comentarios más positivos y más negativos
+    comentario_positivo = df.loc[df["Puntaje Sentimiento"].idxmax()]
+    comentario_negativo = df.loc[df["Puntaje Sentimiento"].idxmin()]
+
+    print("\nComentario más positivo:")
+    print(f"Comentario: {comentario_positivo['Comentario']}")
+    print(f"Puntaje Sentimiento: {comentario_positivo['Puntaje Sentimiento']}")
+
+    print("\nComentario más negativo:")
+    print(f"Comentario: {comentario_negativo['Comentario']}")
+    print(f"Puntaje Sentimiento: {comentario_negativo['Puntaje Sentimiento']}")
+
+    # Guardar el resumen en un archivo de texto
+    with open("informe_sentimientos.txt", "w", encoding="utf-8") as f:
+        f.write("Resumen de Sentimientos:\n")
+        f.write(conteo_sentimientos.to_string())
+        f.write("\n\nEstadísticas descriptivas de los puntajes de sentimiento:\n")
+        f.write(df["Puntaje Sentimiento"].describe().to_string())
+        f.write("\n\nComentario más positivo:\n")
+        f.write(f"Comentario: {comentario_positivo['Comentario']}\n")
+        f.write(f"Puntaje Sentimiento: {comentario_positivo['Puntaje Sentimiento']}\n")
+        f.write("\nComentario más negativo:\n")
+        f.write(f"Comentario: {comentario_negativo['Comentario']}\n")
+
+    print("\nInforme generado: 'informe_sentimientos.txt'")
+    print("Gráfico guardado: 'grafico_sentimientos.png'")
 else:
     print("\nNo se encontró ningún post que coincida exactamente con el enunciado proporcionado.")
