@@ -69,6 +69,31 @@ if post_encontrado:
     print(f"Negativo: {sentimiento_post['neg']}")
     print(f"Compound: {sentimiento_post['compound']}")
 
+    """Rango de valores:
+       El compound: Es un valor numérico que combina 
+      los puntajes de sentimiento positivo, negativo 
+      y neutral en un solo número.
+        -1: Sentimiento extremadamente negativo.
+        0: Sentimiento neutral.
+        1: Sentimiento extremadamente positivo.
+
+        compound = suma / sqrt(suma^2 + 15)
+
+        Ejemplo  "Me encanta este producto, es increíble!!!"
+        "Me encanta" → +1.5
+        "increíble" → +2.0
+        "!!!" → Intensifica el sentimiento.
+        Total: +1.5 + 2.0 = +3.5.
+
+        compound = 3.5 / sqrt(3.5^2 + 15)
+        compound = 3.5 / sqrt(12.25 + 15)
+        compound = 3.5 / sqrt(27.25)
+        compound = 3.5 / 5.22
+        compound ≈ 0.67
+        l puntaje compound es 0.67, lo que indica un sentimiento positivo.
+
+        """
+
     # Analizar los comentarios del post
     print("\nAnalizando comentarios...")
     comentarios_data = []
